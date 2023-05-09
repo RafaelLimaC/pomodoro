@@ -1,0 +1,194 @@
+/* Estilos da index // Cores usadas
+
+#4e8ebc   Background body --- Azul escuro
+#83b0d0   Azul claro --- Background conteudo
+#FEFFFD   Branco
+#458dc1   Background botoes --- Azul escuro
+
+Fonts
+font-family: 'Roboto', sans-serif;
+font-family: 'Varela Round', sans-serif;
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&family=Varela+Round&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+    font-style: none;
+}
+
+body {
+    background-color: #4e8ebc;
+}
+  
+.cabecalho {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 2em auto;
+    max-width: 600px;
+    align-content: center;
+    border-bottom: 2px solid #FEFFFD;
+}
+  
+.cabecalho__titulo {
+    display: flex;
+    margin: 0 auto;
+    color: #FEFFFD;
+    text-align: left;
+    padding-bottom: 10px;
+    font-family: 'Varela Round', sans-serif;
+}
+
+.imagembotao__titulo {  
+    width: 35px;
+    height: 35px;
+    padding-right: 10px;
+}
+
+.cabecalho__botao {
+    display: flex;
+    background-color: #FEFFFD;
+    align-items: center;    
+    padding: 5px;
+    text-align: center;
+    border-radius: 7px;
+    font-size: 1em;
+    text-decoration: none;
+    color: #458dc1;
+    font-family: 'Varela Round', sans-serif;
+    box-shadow: rgb(235, 235, 235) 0px 2px 0px
+}
+
+.principal {
+    margin: 1em auto;
+    padding: 4px;
+    background-color: #83b0d0;
+    border-radius: 12px;
+    max-width: 500px;
+}
+
+
+.container {
+    min-height: 300px;
+    padding: 5px;
+}
+
+.conteudos {
+    border: 2px solid #4e8ebc;
+}
+
+.abas {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 1em;
+    flex-grow: 1;
+    background-color: #83b0d0;
+    width: 100%;
+    text-decoration: none;
+}
+
+.abas button {
+    display: flex;
+    justify-content: center;
+    min-width: 150px;   
+    background-color: #83b0d0;
+    border-radius: 7px;
+    color: #FEFFFD;
+    cursor: pointer;
+    flex-grow: 1;
+    font-size: 1em;
+    padding: 5px;
+    transition: all .5s;
+    font-family: 'ArialRounded', sans-serif;
+}
+
+.abas button:hover {
+    background-color: #666666;
+}
+
+.conteudos {
+    /*  era o antigo delimitador do tamanho da caixa, 
+    mas o conteudo ficava pra fora usando ele  
+    min-height: 300px;
+    padding: 10px;
+
+    */
+}
+
+.form {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.form input {
+    padding: 10px;
+    border: 2px solid orange;
+}
+
+.form button {
+    padding: 10px;
+    background-color: orange;
+    border: none;
+    outline: none;
+    color: #FEFFFD;
+    font-weight: bold;
+}
+
+.hide {
+    display: none;
+}
+
+.abas .ativa {
+    background-color: #4e8ebc;
+    color: #FEFFFD;
+    font-size: 1.1em;
+    align-content: center;
+}
+
+.texto__cronometro {
+    padding-top: 25px;
+    text-align: center;
+    font-size: 5em;
+    color: #FEFFFD;
+    opacity: 0-2;
+    border-bottom: 2px solid white;
+    font-family: 'Varela Round', sans-serif;
+}
+
+.form a {
+    padding: 10px;
+}
+  
+.apresentacao__links__botao {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #FEFFFD;
+    width: 200px;
+    height: 60px;
+    padding: 0.5em 0;
+    text-align: center;
+    border-radius: 8px;
+    font-size: 2.5em;
+    text-decoration: none;
+    color: #458dc1;
+    font-family: 'Varela Round', sans-serif;
+    box-shadow: rgb(235, 235, 235) 0px 6px 0px
+}
+
+.imagembotao {  
+    width: 18px;
+    padding-right: 6px;
+}
+
+.imagembotao__form {  
+    width: 35px;
+    padding-right: 6px;
+}
