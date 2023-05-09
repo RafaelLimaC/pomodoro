@@ -7,7 +7,7 @@
     <title>Pomodoro Timer</title>
     <link rel="stylesheet" href="./styles/style.css">
 </head>
-<body>
+<body data-body="body" class="">
     <header class="cabecalho">
         <div>
             <h1 class="cabecalho__titulo"><img class="imagembotao__titulo" src="./assets/pomodorotitulo.png">Pomodoro</h1>        
@@ -24,20 +24,19 @@
         <div class="container">
             <div class="abas">
                 <a>
-                <button class="ativa" data-aba="pomodoro"><img class="imagembotao" src="./assets/pomodoro.png">Pomodoro</button>
+                <button class="ativa" data-aba="pomodoro" id="fundoazul"><img class="imagembotao" src="./assets/pomodoro.png">Pomodoro</button>
                 </a>
 
                 <a>
-                <button data-aba="intervalocurto"><img class="imagembotao" src="./assets/intervalocurto.png">Intervalo curto</button>
+                <button data-aba="intervalocurto" id="fundoroxo"><img class="imagembotao" src="./assets/intervalocurto.png">Intervalo curto</button>
                 </a>
 
                 <a>
-                <button data-aba="intervalolongo"><img class="imagembotao" src="./assets/intervalolongo.png">Intervalo longo</button>
+                <button data-aba="intervalolongo" id="fundoverde"><img class="imagembotao" src="./assets/intervalolongo.png">Intervalo longo</button>
                 </a>
             </div>
 
-            <div>
-            <!-- <div class="conteudos">  -->
+            <div>            
                 <div data-conteudo="pomodoro">
                     <form class="form">
                         <h2 class="texto__cronometro">Timer 25:00</h2>
