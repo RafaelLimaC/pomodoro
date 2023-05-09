@@ -1,0 +1,233 @@
+/* Estilos da index // Cores usadas
+
+#4e8ebc   Background body --- Azul escuro
+#FEFFFD   Branco
+#458dc1   Background botoes --- Azul escuro
+
+Fonts
+font-family: 'Roboto', sans-serif;
+font-family: 'Varela Round', sans-serif;
+
+---------- COMO APLICAR MUDANÇA DE COR -----------
+
+:root {
+--color: #118bee;
+--hover-brightness: 1.2;
+}
+
+a {
+    color: var(--color);
+}
+
+a:active {
+    filter: brightness(var(--hover-brightness));
+}
+
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&family=Varela+Round&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+    font-style: none;
+}
+
+:root {
+    --azul: #4e8ebc;
+    --roxo: #7A3B69;
+    --verde: #2A7F62;
+    --branco: #FEFFFD;
+    --hover-brightness: 1.2;
+    --hover-darkness: 0.8;
+}
+
+
+body {
+    background-color: var(--azul);
+    height: 100vh;
+    transition: all .5s;
+}
+
+.azul {
+    background-color: var(--azul);
+    height: 100vh;
+    transition: all .5s;
+}
+
+.roxo {
+    background-color: var(--roxo);
+    height: 100vh;
+    transition: all .5s;
+}
+
+.verde {
+    background-color: var(--verde);
+    height: 100vh;
+    transition: all .5s;
+}
+  
+.cabecalho {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding: 2em 0 0 0;
+    max-width: 600px;
+    align-content: center;
+    border-bottom: 2px solid #FEFFFD;
+}
+  
+.cabecalho__titulo {
+    display: flex;
+    margin: 0 auto;
+    color: #FEFFFD;
+    text-align: left;
+    padding-bottom: 10px;
+    font-family: 'Varela Round', sans-serif;
+}
+
+.imagembotao__titulo {  
+    width: 35px;
+    height: 35px;
+    padding-right: 10px;
+}
+
+.cabecalho__botao {
+    display: flex;
+    background-color: #FEFFFD;
+    align-items: center;    
+    padding: 5px;
+    text-align: center;
+    border-radius: 7px;
+    font-size: 1em;
+    text-decoration: none;
+    color: #458dc1;
+    font-family: 'Varela Round', sans-serif;
+    box-shadow: rgb(235, 235, 235) 0px 2px 0px
+}
+
+.principal {
+    margin: 1em auto;
+    padding: 4px;
+    background-color: inherit;
+    filter: brightness(var(--hover-brightness));
+    border-radius: 12px;
+    max-width: 500px;
+}
+
+
+.container {
+    min-height: 300px;
+    padding: 5px;
+}
+
+.conteudos {
+    border: 2px solid inherit;
+}
+
+.abas {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 1em;
+    flex-grow: 1;
+    background-color: inherit;
+    filter: brightness(var(--hover-brightness));
+    width: 100%;
+    text-decoration: none;
+}
+
+.abas button {
+    display: flex;
+    justify-content: center;
+    min-width: 150px;   
+    background-color: inherit;
+    filter: brightness(var(--hover-brightness));
+    border-radius: 7px;
+    color: #FEFFFD;
+    cursor: pointer;
+    flex-grow: 1;
+    font-size: 1em;
+    padding: 5px;
+    transition: all .5s;
+    font-family: 'ArialRounded', sans-serif;
+}
+
+.abas button:hover {
+    background-color: #666666;
+}
+
+.form {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.form input {
+    padding: 10px;
+    border: 2px solid orange;
+}
+
+.form button {
+    padding: 10px;
+    background-color: orange;
+    border: none;
+    outline: none;
+    color: #FEFFFD;
+    font-weight: bold;
+}
+
+.hide {
+    display: none;
+}
+
+.abas .ativa {
+    background-color: inherit;
+    filter: brightness(var(--hover-darkness));
+    font-size: 1.1em;
+    align-content: center;
+}
+
+.texto__cronometro {
+    padding-top: 25px;
+    text-align: center;
+    font-size: 5em;
+    color: #FEFFFD;
+    opacity: 0-2;
+    border-bottom: 2px solid white;
+    font-family: 'Varela Round', sans-serif;
+}
+
+.form a {
+    padding: 10px;
+}
+  
+.apresentacao__links__botao {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #FEFFFD;
+    width: 200px;
+    height: 60px;
+    padding: 0.5em 0;
+    text-align: center;
+    border-radius: 8px;
+    font-size: 2.5em;
+    text-decoration: none;
+    color: inherit;
+    font-family: 'Varela Round', sans-serif;
+    box-shadow: rgb(235, 235, 235) 0px 6px 0px
+}
+
+.imagembotao {  
+    width: 18px;
+    padding-right: 6px;
+}
+
+.imagembotao__form {  
+    width: 35px;
+    padding-right: 6px;
+}
