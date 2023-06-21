@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomodoro Timer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css" integrity="sha512-IJEbgDEF7OeKJRa0MY2PApnyJHRIsgzCveek4ec8VWQ+7KG3ZSKVNYa5xP/Gh0hVP0Mwb+gBsk+GwR3JQGhQNg==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link rel="icon" href="http://example.com/favicon.png">
+</head>
+
+<body class="">
+    <header class="container__cabecalho">
+        <div class="cabecalho">
+            <div class="cabecalho__titulo">
+                <i class="fa-regular fa-clock"></i>
+                <h1>Pomodoro</h1>
+            </div>
+            <div class="cabecalho__botao">
+                <a class="cabecalho__botao__conteudo" href="https://github.com/RafaelLimaC">
+                    <i class="fa-brands fa-github"></i>
+                    GitHub
+                </a>
+            </div>
+        </div>
+    </header>
+    <main class="principal">
+        <div class="container">
+            <div class="abas">
+                <button class="ativa" data-aba="pomodoro" id="style1">
+                    <i class="fa-solid fa-stopwatch"></i>
+                    Pomodoro
+                </button>
+
+                <button data-aba="intervalocurto" id="style2">
+                    <i class="fa-solid fa-hourglass-start fa-flip-vertical"></i>
+                    Intervalo curto
+                </button>
+
+                <button data-aba="intervalolongo" id="style3">
+                    <i class="fa-solid fa-hourglass-half"></i>
+                    Intervalo longo
+                </button>
+            </div>
+
+            <div>
+                <div data-conteudo="pomodoro">
+                    <form class="form">
+                        <h2 class="texto__cronometro">Timer 25:00</h2>
+                        <a class="botao__play" name="pomodoro" href="https://github.com/RafaelLimaC">
+                            <i class="fa-solid fa-play"></i>
+                            START
+                        </a>
+                    </form>
+                </div>
+            </div>
+            <div>
+                <div class="hide" data-conteudo="intervalocurto">
+                    <form class="form">
+                        <h2 class="texto__cronometro">Timer 05:00</h2>
+                        <a class="botao__play" name="intervalocurto"
+                            href="https://github.com/RafaelLimaC">
+                            <i class="fa-solid fa-play"></i>
+                            START
+                        </a>
+                    </form>
+                </div>
+            </div>
+            <div>
+                <div class="hide" data-conteudo="intervalolongo">
+                    <form class="form">
+                        <h2 class="texto__cronometro">Timer 15:00</h2>
+                        <a class="botao__play" name="intervalolongo"
+                            href="https://github.com/RafaelLimaC">
+                            <i class="fa-solid fa-play"></i>
+                            START
+                        </a>
+                    </form>
+                </div>
+            </div>  
+        </div>
+    </main>
+    <footer>
+
+    </footer>
+    <script src="main.js"></script>
+</body>
+</html>
