@@ -40,7 +40,6 @@ function formatTime(time) {
   } else {
     return `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
   }
-
 }
 
 function startTimer(start, pause, reset, tempoTotal, display, isPaused, timerId) {
@@ -59,7 +58,6 @@ function startTimer(start, pause, reset, tempoTotal, display, isPaused, timerId)
       reset.disabled = true;
     }
   }, 1000);
-
 }
 
 function pauseTimer(isPaused, start, pause, timerId) {
@@ -71,21 +69,57 @@ function pauseTimer(isPaused, start, pause, timerId) {
 
 function resetTimer(totalTime, display, start, pause, reset, timerId, valorInicial) {
   clearInterval(timerId);
-  totalTime = valorInicial; // Valor inicial em segundos
+  totalTime = valorInicial;
   display.textContent = formatTime(totalTime);
   start.disabled = false;
   pause.disabled = true;
   reset.disabled = true;
 }
 
-startButtonPomodoro.addEventListener('click', startTimer(startButtonPomodoro, pauseButtonPomodoro, resetButtonPomodoro, tempoTotalPomodoro, timerPomodoro, isPausedPomodoro, timerIdPomodoro));
-startButtonIntervaloCurto.addEventListener('click', startTimer(startButtonIntervaloCurto, pauseButtonIntervaloCurto, resetButtonIntervaloCurto, tempoTotalIntervaloCurto, timerIntervaloCurto, isPausedIntervaloCurto, timerIdIntervaloCurto));
-startButtonIntervaloLongo.addEventListener('click', startTimer(startButtonIntervaloLongo, pauseButtonIntervaloLongo, resetButtonIntervaloLongo, tempoTotalIntervaloLongo, timerIntervaloLongo, isPausedIntervaloLongo, timerIdIntervaloLongo));
+function iniciarTimer(e) {
+  if (e.target.id === 'startButton-pomodoro') {
+    startTimer(startButtonPomodoro, pauseButtonPomodoro, resetButtonPomodoro, tempoTotalPomodoro, timerPomodoro, isPausedPomodoro, timerIdPomodoro);
+  } 
+  if (e.target.id === 'startButton-intervalo-curto') {
+    startTimer(startButtonIntervaloCurto, pauseButtonIntervaloCurto, resetButtonIntervaloCurto, tempoTotalIntervaloCurto, timerIntervaloCurto, isPausedIntervaloCurto, timerIdIntervaloCurto);
+  } 
+  if (e.target.id === 'startButton-intervalo-longo') {
+    startTimer(startButtonIntervaloLongo, pauseButtonIntervaloLongo, resetButtonIntervaloLongo, tempoTotalIntervaloLongo, timerIntervaloLongo, isPausedIntervaloLongo, timerIdIntervaloLongo);
+  }
+}
 
-pauseButtonPomodoro.addEventListener('click', pauseTimer(isPausedPomodoro, startButtonPomodoro, pauseButtonPomodoro, timerIdPomodoro));
-pauseButtonIntervaloCurto.addEventListener('click', pauseTimer(isPausedIntervaloCurto, startButtonIntervaloCurto, pauseButtonIntervaloCurto, timerIdIntervaloCurto));
-pauseButtonIntervaloLongo.addEventListener('click', pauseTimer(isPausedIntervaloLongo, startButtonIntervaloLongo, pauseButtonIntervaloLongo, timerIdIntervaloLongo));
+function ativarPause(e) {
+  if (e.target.id === 'pauseButton-pomodoro') {
+    pauseTimer(isPausedPomodoro, startButtonPomodoro, pauseButtonPomodoro, timerIdPomodoro);
+  } 
+  if (e.target.id === 'pauseButton-intervalo-curto') {
+    pauseTimer(isPausedIntervaloCurto, startButtonIntervaloCurto, pauseButtonIntervaloCurto, timerIdIntervaloCurto)
+  } 
+  if (e.target.id === 'pauseButton-intervalo-longo') {
+    pauseTimer(isPausedIntervaloLongo, startButtonIntervaloLongo, pauseButtonIntervaloLongo, timerIdIntervaloLongo);
+  }
+}
 
-resetButtonPomodoro.addEventListener('click', resetTimer(tempoTotalPomodoro, timerPomodoro, startButtonPomodoro, pauseButtonPomodoro, resetButtonPomodoro, timerIdPomodoro, valorInicialPomodoro));
-resetButtonIntervaloCurto.addEventListener('click', resetTimer(tempoTotalIntervaloCurto, timerIntervaloCurto, startButtonIntervaloCurto, pauseButtonIntervaloCurto, resetButtonIntervaloCurto, timerIdIntervaloCurto, valorInicialIntervaloCurto));
-resetButtonIntervaloLongo.addEventListener('click', resetTimer(tempoTotalIntervaloLongo, timerIntervaloLongo, startButtonIntervaloLongo, pauseButtonIntervaloLongo, resetButtonIntervaloLongo, timerIdIntervaloLongo, valorInicialIntervaloLongo));
+function ativarReset(e) {
+  if (e.target.id === 'pauseButton-pomodoro') {
+    resetTimer(tempoTotalPomodoro, timerPomodoro, startButtonPomodoro, pauseButtonPomodoro, resetButtonPomodoro, timerIdPomodoro, valorInicialPomodoro);
+  } 
+  if (e.target.id === 'pauseButton-intervalo-curto') {
+    resetTimer(tempoTotalIntervaloCurto, timerIntervaloCurto, startButtonIntervaloCurto, pauseButtonIntervaloCurto, resetButtonIntervaloCurto, timerIdIntervaloCurto, valorInicialIntervaloCurto);
+  } 
+  if (e.target.id === 'pauseButton-intervalo-longo') {
+    resetTimer(tempoTotalIntervaloLongo, timerIntervaloLongo, startButtonIntervaloLongo, pauseButtonIntervaloLongo, resetButtonIntervaloLongo, timerIdIntervaloLongo, valorInicialIntervaloLongo);
+  }
+}
+
+startButtonPomodoro.addEventListener('click', iniciarTimer);
+startButtonIntervaloCurto.addEventListener('click', iniciarTimer);
+startButtonIntervaloLongo.addEventListener('click', iniciarTimer);
+
+pauseButtonPomodoro.addEventListener('click', ativarPause);
+pauseButtonIntervaloCurto.addEventListener('click', ativarPause);
+pauseButtonIntervaloLongo.addEventListener('click', ativarPause);
+
+resetButtonPomodoro.addEventListener('click', ativarReset);
+resetButtonIntervaloCurto.addEventListener('click', ativarReset);
+resetButtonIntervaloLongo.addEventListener('click', ativarReset);

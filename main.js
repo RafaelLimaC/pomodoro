@@ -49,91 +49,55 @@
 
 
 // começo do javascript do cronometro 
-let timerIdPomodoro;
-let timerIdIntervaloCurto;
-let timerIdIntervaloLongo;
-
-let isPausedPomodoro = true;
-let isPausedIntervaloCurto = true;
-let isPausedIntervaloLongo = true;
-
-let tempoTotalPomodoro = 1500; // 25min em segundos
-let tempoTotalIntervaloCurto = 300; // 5min em segundos
-let tempoTotalIntervaloLongo = 900; // 15min em segundos
-
-const timerPomodoro =       document.getElementById('timer-pomodoro');
-const timerIntervaloCurto = document.getElementById('timer-intervalo-curto');
-const timerIntervaloLongo = document.getElementById('timer-intervalo-longo');
-
-const startButtonPomodoro =         document.getElementById('startButton-pomodoro');
-const startButtonIntervaloCurto =   document.getElementById('startButton-intervalo-curto');
-const startButtonIntervaloLongo =   document.getElementById('startButton-intervalo-longo');
-
-const pauseButtonPomodoro =         document.getElementById('pauseButton-pomodoro');
-const pauseButtonIntervaloCurto =   document.getElementById('pauseButton-intervalo-curto');
-const pauseButtonIntervaloLongo =   document.getElementById('pauseButton-intervalo-longo');
-
-const resetButtonPomodoro =         document.getElementById('resetButton-pomodoro');
-const resetButtonIntervaloCurto =   document.getElementById('resetButton-intervalo-curto');
-const resetButtonIntervaloLongo =   document.getElementById('resetButton-intervalo-longo');
+let timerId;
+let totalTime = 60; // Valor inicial em segundos
+let isPaused = true;
+const timerDisplay = document.getElementById('timer');
+const startButton = document.getElementById('startButton');
+const pauseButton = document.getElementById('pauseButton');
+const resetButton = document.getElementById('resetButton');
 
 function formatTime(time) {
   let hours = Math.floor(time / 3600);
   let minutes = Math.floor((time % 3600) / 60);
   let seconds = time % 60;
-
-  if (hours > 0) {
-    return `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
-  } else {
-    return `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
-  }
-
+  return `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
 }
 
-function startTimer(start, pause, reset, tempoTotal, display, isPaused, timerId) {
+function startTimer() {
   isPaused = false;
-  start.disabled = true;
-  pause.disabled = false;
-  reset.disabled = false;
+  startButton.disabled = true;
+  pauseButton.disabled = false;
+  resetButton.disabled = false;
   
   timerId = setInterval(function() {
-    tempoTotal--;
-    display.textContent = formatTime(tempoTotal);
-    if (tempoTotal <= 0) {
+    totalTime--;
+    timerDisplay.textContent = formatTime(totalTime);
+    if (totalTime <= 0) {
       clearInterval(timerId);
-      start.disabled = false;
-      pause.disabled = true;
-      reset.disabled = true;
+      startButton.disabled = false;
+      pauseButton.disabled = true;
+      resetButton.disabled = true;
     }
   }, 1000);
 }
 
-function pauseTimer(isPaused, start, pause, timerId) {
+function pauseTimer() {
   isPaused = true;
   clearInterval(timerId);
-  start.disabled = false;
-  pause.disabled = true;
+  startButton.disabled = false;
+  pauseButton.disabled = true;
 }
 
-function resetTimer(totalTime, display, start, pause, reset, timerId) {
+function resetTimer() {
   clearInterval(timerId);
   totalTime = 60; // Valor inicial em segundos
-  display.textContent = formatTime(totalTime);
-  start.disabled = false;
-  pause.disabled = true;
-  reset.disabled = true;
+  timerDisplay.textContent = formatTime(totalTime);
+  startButton.disabled = false;
+  pauseButton.disabled = true;
+  resetButton.disabled = true;
 }
 
-startButtonPomodoro.addEventListener('click', startTimer(startButtonPomodoro, pauseButtonPomodoro, resetButtonPomodoro, tempoTotalPomodoro, timerPomodoro, isPausedPomodoro, timerIdPomodoro));
-startButtonIntervaloCurto.addEventListener('click', startTimer(startButtonIntervaloCurto, pauseButtonIntervaloCurto, resetButtonIntervaloCurto, tempoTotalIntervaloCurto, timerIntervaloCurto, isPausedIntervaloCurto, timerIdIntervaloCurto));
-startButtonIntervaloLongo.addEventListener('click', startTimer(startButtonIntervaloLongo, pauseButtonIntervaloLongo, resetButtonIntervaloLongo, tempoTotalIntervaloLongo, timerIntervaloLongo, isPausedIntervaloLongo, timerIdIntervaloLongo));
-
-pauseButtonPomodoro.addEventListener('click', pauseTimer(isPausedPomodoro, startButtonPomodoro, pauseButtonPomodoro, timerIdPomodoro));
-pauseButtonIntervaloCurto.addEventListener('click', pauseTimer(isPausedIntervaloCurto, startButtonIntervaloCurto, pauseButtonIntervaloCurto, timerIdIntervaloCurto));
-pauseButtonIntervaloLongo.addEventListener('click', pauseTimer(isPausedIntervaloLongo, startButtonIntervaloLongo, pauseButtonIntervaloLongo, timerIdIntervaloLongo));
-
-resetButtonPomodoro.addEventListener('click', resetTimer(tempoTotalPomodoro, timerPomodoro, startButtonPomodoro, pauseButtonPomodoro, resetButtonPomodoro, timerIdPomodoro));
-resetButtonIntervaloCurto.addEventListener('click', resetTimer(tempoTotalIntervaloCurto, timerIntervaloCurto, startButtonIntervaloCurto, pauseButtonIntervaloCurto, resetButtonIntervaloCurto, timerIdIntervaloCurto));
-resetButtonIntervaloLongo.addEventListener('click', resetTimer(tempoTotalIntervaloLongo, timerIntervaloLongo, startButtonIntervaloLongo, pauseButtonIntervaloLongo, resetButtonIntervaloLongo, timerIdIntervaloLongo));
-
-
+startButton.addEventListener('click', startTimer);
+pauseButton.addEventListener('click', pauseTimer);
+resetButton.addEventListener('click', resetTimer);
