@@ -172,6 +172,7 @@ body {
     color: var(--cinza);
 
     text-decoration: none;
+    border: none;
     font-family: 'Varela Round', sans-serif;
     border-radius: 8px;
     box-shadow: rgb(157, 157, 157) 0px 6px 0px
