@@ -112,6 +112,7 @@ function ativarReset(e) {
   }
 }
 
+
 startButtonPomodoro.addEventListener('click', iniciarTimer);
 startButtonIntervaloCurto.addEventListener('click', iniciarTimer);
 startButtonIntervaloLongo.addEventListener('click', iniciarTimer);
