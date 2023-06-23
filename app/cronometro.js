@@ -112,7 +112,6 @@ function ativarReset(e) {
   }
 }
 
-// teste
 
 startButtonPomodoro.addEventListener('click', iniciarTimer);
 startButtonIntervaloCurto.addEventListener('click', iniciarTimer);
