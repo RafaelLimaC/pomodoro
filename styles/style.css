@@ -249,23 +249,133 @@ body {
     border: 3px solid rgba(0, 0, 0, 0.15);
 }
 
-.fa-solid .fa-angles-down {
-    pointer-events: none;
-}
-
 .accordion-ativo, .todolist__accordion:hover {
-    background-color: var(--branco);
+    background-color: inherit;
 }
   
-  /* Style the accordion panel. Note: hidden by default */
 .todolist__accordion {
-    padding: 0 18px;
-    width: 100%;
-    background-color: var(--branco);
     display: none;
     overflow: hidden;
-    transition: all 0.3s;
+    width: 100%;
+    background-color: inherit;
+    border-radius: 8px;
+    font-size: 1.2rem;
 }
+
+.conteudo {
+    display: flex;
+    align-items: flex-start;
+    gap: 2em;
+}
+
+.todolist__principal {
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+}
+
+.adicionar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+}
+
+.campo__nome {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0.2em 0.5em;
+    color: var(--branco);
+    border-radius: 7px;
+    border: 3px solid rgba(0, 0, 0, 0.15);
+    outline: none;
+    font-size: 1.2rem;
+    background-color: inherit;
+    filter: var(--hover-darkness);
+}
+
+.cadastrar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: var(--branco);
+    font-size: 1.2rem;
+    
+    padding: 2px 10px;
+    border: none;
+    background-color: inherit;
+    cursor: pointer;
+    height: 100%;
+
+    border-radius: 8px;
+    border: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.lista {
+    padding: 0;
+}
+
+.li-displayflex {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+
+    font-size: 1.5rem;
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    list-style: none;
+
+    color: var(--branco);
+    background: inherit;
+    margin: 1rem 0 0 0;
+    width: 100%;
+    box-sizing: border-box;
+    gap: 1em;
+    font-size: 20px;
+}
+
+.item div {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    font-size: 1.5rem;
+}
+
+.item strong {
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 15px;
+    height: 15px;
+    Background: #C5965F;
+    font-weight: 400;
+}
+
+.item button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: var(--branco);
+    font-size: 1.2rem;
+    
+    padding: 2px 10px;
+    border: none;
+    background-color: inherit;
+    cursor: pointer;
+
+    border-radius: 8px;
+    border: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+
 
 /* --- começo da div conteudo de texto --- */
 .container__textos {
