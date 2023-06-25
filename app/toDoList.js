@@ -14,10 +14,10 @@ function ativarToDoList(element) {
   div.classList.toggle('accordion-ativo');
   if (div.style.display === 'block') {
     div.style.display = 'none';
-    button.innerHTML = '<i class="fa-solid fa-angles-up"></i>To do list';
+    button.innerHTML = '<i class="fa-solid fa-up-right-and-down-left-from-center"></i>To do list';
   } else {
     div.style.display = 'block';
-    button.innerHTML = '<i class="fa-solid fa-angles-down"></i>To do list';
+    button.innerHTML = '<i class="fa-solid fa-down-left-and-up-right-to-center"></i>To do list';
   }
 }
 
