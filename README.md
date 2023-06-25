@@ -1,4 +1,4 @@
-# Pomodoro Timer and To do list
+# Pomodoro Timer e To do list
 
 ![Imagem do site pomodoro](https://i.imgur.com/iFKm2MI.png)
 
@@ -9,6 +9,7 @@ Projeto de um controlador de tempo para estudos/atividades, o Pomodoro Timer é 
 ## Tecnologias utilizadas
 
 No projeto utilizei:
+
 ![image](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 ![image](https://img.shields.io/badge/CSS-239120?&style=for-the-badge&logo=css3&logoColor=white)
 ![image](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
