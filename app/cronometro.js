@@ -63,7 +63,7 @@ function startTimer(timerProperties, start, pause, reset, display, timerId) {
     timerProperties.totalTime--;
     display.textContent = formatTime(timerProperties.totalTime);
     if (timerProperties.totalTime <= 0) {
-      clearInterval(timerId);
+      clearInterval(timerProperties.timerId);
       start.disabled = false;
       pause.disabled = true;
       reset.disabled = true;
