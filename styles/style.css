@@ -294,6 +294,19 @@ body {
     filter: var(--hover-darkness);
 }
 
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #BBBBBB;
+    opacity: 1; /* Firefox */
+  }
+  
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: #BBBBBB;
+  }
+  
+  ::-ms-input-placeholder { /* Microsoft Edge */
+    color: #BBBBBB;
+  }
+
 .cadastrar {
     display: flex;
     align-items: center;
