@@ -8,9 +8,9 @@
 }
 
 :root {
-    --color-style1: #485269;
+    --color-style1: #364363;
     --color-style2: #7A3B69;
-    --color-style3: #386f36;
+    --color-style3: #325c31;
     --branco: #FEFFFD;
     --cinza: #333333;
 
@@ -85,18 +85,21 @@ body {
 }
 
 .principal {
-    margin: 2rem auto 4rem auto;
-    border-radius: 12px;
-    width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 
+    margin: 2rem auto 2rem auto;
+    width: 500px;
     background-color: inherit;
-    filter: brightness(var(--hover-brightness));
-    box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.15);
 }
 
 .container {
-    min-height: 380px;
+    border-radius: 12px;
     padding: 10px;
+    box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.15);
+    background-color: inherit;
+    filter: brightness(var(--hover-brightness));
 }
 
 .abas {
@@ -108,7 +111,6 @@ body {
     width: 100%;
 
     background-color: inherit;
-    filter: brightness(var(--hover-brightness));
 }
 
 .abas button {
@@ -123,23 +125,24 @@ body {
     font-weight: 200;
 
     background-color: inherit;
-    filter: brightness(var(--hover-darkness));
     color: #FEFFFD;
 
     border-radius: 7px;
     cursor: pointer;
-    transition: all .5s;
+
     border: 2px solid rgba(0, 0, 0, 0.15);
 }
 
 .abas button:hover {
     background: none rgba(0, 0, 0, 0.08);
+    transition: .5s;
 }
 
 .abas .ativa {
     filter:brightness(var(--hover-darkness));
     background-color: rgba(0, 0, 0, 0.15); 
-    box-shadow: 0px 0px 15px 1px rgba(255, 255, 255, 0.15);
+    box-shadow: 0px 0px 15px 2px rgba(255, 255, 255, 0.15);
+    transition: all .5s;
 }
 
 .form {
@@ -148,6 +151,7 @@ body {
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    padding-bottom: 1rem;
 }
 
 .hide {
@@ -173,6 +177,7 @@ body {
 
     text-decoration: none;
     border: none;
+    cursor: pointer;
     font-family: 'Varela Round', sans-serif;
     border-radius: 8px;
     box-shadow: rgb(157, 157, 157) 0px 6px 0px
@@ -210,6 +215,56 @@ body {
     display: flex;
     flex-direction: column;
     gap: 10px;
+}
+/* --- div to-do list --- */
+.container__todolist {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+
+    border-radius: 12px;
+    box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.15);
+    background-color: inherit;
+    filter: brightness(var(--hover-brightness));
+    padding: 10px;
+}
+
+.todolist__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+
+    width: 100%;
+    color: var(--branco);
+    font-size: 2rem;
+    
+    padding: 10px;
+    border: none;
+    background-color: inherit;
+    cursor: pointer;
+
+    border-radius: 8px;
+    border: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.fa-solid .fa-angles-down {
+    pointer-events: none;
+}
+
+.accordion-ativo, .todolist__accordion:hover {
+    background-color: var(--branco);
+}
+  
+  /* Style the accordion panel. Note: hidden by default */
+.todolist__accordion {
+    padding: 0 18px;
+    width: 100%;
+    background-color: var(--branco);
+    display: none;
+    overflow: hidden;
+    transition: all 0.3s;
 }
 
 /* --- começo da div conteudo de texto --- */
