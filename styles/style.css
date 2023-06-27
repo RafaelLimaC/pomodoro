@@ -362,7 +362,18 @@ body {
     box-sizing: border-box;
     gap: 1em;
     font-size: 20px;
+    counter-increment: step-counter;
 }
+
+strong::after {
+    color: var(--branco);
+    content: counter(step-counter);
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+  }
 
 .item div {
     display: flex;
@@ -376,9 +387,9 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 15px;
-    height: 15px;
-    Background: #C5965F;
+    width: 40px;
+    height: 40px;
+    background: rgba(0, 0, 0, 0.28);
     font-weight: 400;
 }
 
