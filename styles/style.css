@@ -300,7 +300,18 @@ body {
     filter: var(--hover-darkness);
 }
 
-.campo__nome:focus {
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:active{
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: #ffffff;
+    transition: background-color 5000s ease-in-out 0s;
+    box-shadow: inset 0 0 20px 20px rgba(0, 0, 0, 0.15);
+    border: 3px solid rgba(0, 0, 0, 0.3);
+    background-color: rgba(0, 0, 0, 0.15);
+}
+
+.campo__nome:focus, input:-webkit-autofill:focus {
     border: 3px solid rgba(0, 0, 0, 0.3);
     background-color: rgba(0, 0, 0, 0.15);
 }
