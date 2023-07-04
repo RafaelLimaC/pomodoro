@@ -1,4 +1,4 @@
-# Pomodoro Timer e To do list
+# Pomodoro Timer & To-do list
 
 ![Imagem do site pomodoro](https://i.imgur.com/iFKm2MI.png)
 
