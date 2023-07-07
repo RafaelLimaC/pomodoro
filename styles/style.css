@@ -25,7 +25,29 @@ body {
     background-color: var(--color-style1);
     font-family: var(--font-family);
     transition: all .5s;
+    z-index: -2;
 }
+
+.wrapper {
+    background-color: inherit;
+    position: relative;
+    pointer-events: none;
+} 
+
+.wrapper > * {
+    pointer-events: all;
+}
+
+.wrapper::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url(
+      '/assets/bg-tablet-pattern.svg'
+    );
+    background-position: -10rem -20rem;
+    opacity: 0.05;
+} 
 
 .style1 {
     background-color: var(--color-style1);
@@ -42,7 +64,8 @@ body {
 .container__cabecalho {
     max-width: 600px;
     width: 100%;
-    margin: 2rem auto 0.5rem auto;
+    padding-top: 2rem;
+    margin: 0 auto 0.5rem auto;
     border-bottom: 3px solid rgba(0, 0, 0, 0.15);
 }
 
@@ -487,6 +510,11 @@ strong::after {
 
 .direitos__autorais:hover {
     text-shadow: #8E2424 -3px 0, rgb(106, 211, 211) 3px 0;
+}
+
+.rodape a {
+    text-decoration: none;
+    color: var(--branco);
 }
 
 
