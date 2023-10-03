@@ -388,7 +388,7 @@ input:-webkit-autofill:active{
 .item {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    gap: 0.7rem;
 
     list-style: none;
 
@@ -397,7 +397,6 @@ input:-webkit-autofill:active{
     margin: 1rem 0 0 0;
     width: 100%;
     box-sizing: border-box;
-    gap: 1em;
     font-size: 20px;
     counter-increment: step-counter;
 }
@@ -438,7 +437,8 @@ strong::after {
     color: var(--branco);
     font-size: 1.2rem;
     
-    padding: 2px 10px;
+    height: 45px;
+    width: 45px;
     border: none;
     background-color: inherit;
     cursor: pointer;
@@ -447,7 +447,9 @@ strong::after {
     border: 3px solid rgba(0, 0, 0, 0.15);
 }
 
-
+.btn-editar {
+    margin-left: auto;
+}
 
 /* --- começo da div conteudo de texto --- */
 .container__textos {

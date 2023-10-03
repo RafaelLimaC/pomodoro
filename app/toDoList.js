@@ -1,5 +1,16 @@
 const container = document.querySelector('.todolist__button');
 
+let tarefas = [
+  {
+    descricao: 'Tarefa concluída',
+    concluida: true
+  },
+  {
+    descricao: 'Tarefa pendente',
+    concluida: false
+  }
+]
+
 container.addEventListener('click', function(event) {
   if (event.target.classList.contains('todolist__button') || event.target.classList.contains('fa-angles-down') || event.target.classList.contains('fa-angles-up')) {
     ativarToDoList(event.target);
@@ -73,6 +84,7 @@ function criaElemento(item) {
 
     novoItem.appendChild(container);
 
+    novoItem.appendChild(botaoEdita(item.id));
     novoItem.appendChild(botaoDeleta(item.id));
 
     lista.appendChild(novoItem);
@@ -84,7 +96,9 @@ function atualizaElemento(item) {
 
 function botaoDeleta(id) {
     const elementoBotao = document.createElement("button");
-    elementoBotao.innerText = "Deletar";
+    elementoBotao.classList.add("btn-excluir");
+    
+    elementoBotao.innerHTML = `<i class="fa-solid fa-xmark"></i>`
 
     elementoBotao.addEventListener("click", function() {
         deletaElemento(this.parentNode, id);
@@ -92,9 +106,26 @@ function botaoDeleta(id) {
     return elementoBotao;
 }
 
+function botaoEdita(id) {
+    const elementoBotao = document.createElement("button");
+    elementoBotao.innerHTML = `<i class="fa-solid fa-pen"></i>`;
+    elementoBotao.classList.add("btn-editar");
+
+    elementoBotao.addEventListener("click", function() {
+        editaElemento(this.parentNode, id);
+    })
+    return elementoBotao;
+}
+
 function deletaElemento(tag, id) {
     tag.remove();
 
+    itens.splice(itens.findIndex(elemento => elemento.id === id), 1);
+
+    localStorage.setItem("itens", JSON.stringify(itens));
+}
+
+function editaElemento(tag, id) {
     itens.splice(itens.findIndex(elemento => elemento.id === id), 1);
 
     localStorage.setItem("itens", JSON.stringify(itens));
